@@ -1,0 +1,268 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfsstn2b2qw6s"]
+
+[ext_resource type="Texture2D" uid="uid://ctpc33ymysoxh" path="res://Assets/TileMap/tilemap.png" id="1_of5un"]
+[ext_resource type="Texture2D" uid="uid://b33eg2hhehi8" path="res://Assets/TileMap/tilemap-backgrounds.png" id="2_v4cvr"]
+[ext_resource type="PackedScene" uid="uid://e1k8uavaeura" path="res://Scene/player.tscn" id="3_2pdb6"]
+[ext_resource type="PackedScene" uid="uid://bkq7hp8xvfs33" path="res://Scene/Objects/EndFlag.tscn" id="4_h5q2x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1boh"]
+texture = ExtResource("1_of5un")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(18, 18)
+4:3/0 = 0
+4:2/0 = 0
+3:3/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:5/0 = 0
+17:6/0 = 0
+17:7/0 = 0
+17:8/0 = 0
+16:8/0 = 0
+16:7/0 = 0
+16:6/0 = 0
+16:4/0 = 0
+16:3/0 = 0
+15:2/0 = 0
+15:1/0 = 0
+14:2/0 = 0
+11:4/0 = 0
+10:5/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:5/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+15:3/0 = 0
+16:2/0 = 0
+16:1/0 = 0
+16:0/0 = 0
+15:0/0 = 0
+14:0/0 = 0
+13:0/0 = 0
+12:0/0 = 0
+11:0/0 = 0
+10:1/0 = 0
+9:1/0 = 0
+6:3/0 = 0
+6:4/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+11:6/0 = 0
+10:4/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+7:3/0 = 0
+5:3/0 = 0
+4:4/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+8:5/0 = 0
+8:4/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:1/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:7/0 = 0
+4:5/0 = 0
+5:2/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+4:0/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+7:0/0 = 0
+1:2/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+2:5/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+0:1/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+9:7/0 = 0
+8:7/0 = 0
+7:8/0 = 0
+6:8/0 = 0
+5:8/0 = 0
+4:8/0 = 0
+3:8/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+0:8/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+11:8/0 = 0
+10:8/0 = 0
+9:8/0 = 0
+8:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+18:8/0 = 0
+18:7/0 = 0
+15:6/0 = 0
+14:6/0 = 0
+13:6/0 = 0
+13:7/0 = 0
+12:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+19:7/0 = 0
+18:6/0 = 0
+12:6/0 = 0
+7:7/0 = 0
+15:5/0 = 0
+14:5/0 = 0
+6:7/0 = 0
+12:5/0 = 0
+14:3/0 = 0
+9:4/0 = 0
+10:3/0 = 0
+12:2/0 = 0
+13:1/0 = 0
+12:1/0 = 0
+11:2/0 = 0
+11:1/0 = 0
+10:0/0 = 0
+5:4/0 = 0
+5:6/0 = 0
+7:4/0 = 0
+14:1/0 = 0
+17:1/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+17:3/0 = 0
+18:2/0 = 0
+19:1/0 = 0
+19:0/0 = 0
+19:2/0 = 0
+19:3/0 = 0
+18:4/0 = 0
+18:5/0 = 0
+19:4/0 = 0
+17:2/0 = 0
+17:4/0 = 0
+17:5/0 = 0
+18:1/0 = 0
+18:3/0 = 0
+19:5/0 = 0
+19:6/0 = 0
+19:8/0 = 0
+13:2/0 = 0
+13:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_34ki3"]
+tile_size = Vector2i(18, 18)
+sources/0 = SubResource("TileSetAtlasSource_j1boh")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywxtq"]
+texture = ExtResource("2_v4cvr")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:0/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n68wr"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_ywxtq")
+
+[node name="LevelModel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_34ki3")
+rendering_quadrant_size = 18
+format = 2
+layer_0/name = "Back"
+layer_0/z_index = -1
+layer_1/name = "Middle"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Laders"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Front"
+layer_3/z_index = 1
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "Front1"
+layer_4/z_index = 1
+layer_4/tile_data = PackedInt32Array()
+layer_5/name = "Front2"
+layer_5/z_index = 2
+layer_5/tile_data = PackedInt32Array()
+
+[node name="BackGround" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_n68wr")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -1
+
+[node name="Player" parent="." instance=ExtResource("3_2pdb6")]
+position = Vector2(137, 152)
+metadata/_edit_group_ = true
+
+[node name="randomBloc_parent" type="Node" parent="."]
+
+[node name="coins_parent" type="Node" parent="."]
+
+[node name="EndFlag" parent="." instance=ExtResource("4_h5q2x")]
+position = Vector2(351, 155)
+metadata/_edit_group_ = true
