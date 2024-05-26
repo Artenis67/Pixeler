@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://e1k8uavaeura"]
+
+[ext_resource type="Texture2D" uid="uid://dmq0k43ds8mx8" path="res://Assets/Sprites/tilemap-characters.png" id="1_6ubx2"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_m0vmt"]
+[ext_resource type="Script" path="res://Scripts/score-manager.gd" id="3_uwtph"]
+[ext_resource type="FontFile" uid="uid://dutxdr3bhf5fn" path="res://Imports/Fonts/upheavtt.ttf" id="4_gl7ih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7cvk"]
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6ixa"]
+atlas = ExtResource("1_6ubx2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmq4s"]
+atlas = ExtResource("1_6ubx2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smbue"]
+atlas = ExtResource("1_6ubx2")
+region = Rect2(25, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56yy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6ixa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmq4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smbue")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+script = ExtResource("1_m0vmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_c7cvk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_56yy7")
+animation = &"run"
+
+[node name="score-manager" type="Node" parent="."]
+script = ExtResource("3_uwtph")
+
+[node name="score-label" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 74.0
+offset_top = -104.0
+offset_right = 220.155
+offset_bottom = -67.44
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gl7ih")
+theme_override_font_sizes/normal_font_size = 29
+text = "Score : 0"
+scroll_active = false

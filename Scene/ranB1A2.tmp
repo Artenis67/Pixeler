@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://88tixg1er2v6"]
+
+[ext_resource type="Texture2D" uid="uid://ctpc33ymysoxh" path="res://Assets/TileMap/tilemap.png" id="1_81bsm"]
+[ext_resource type="Script" path="res://Scripts/random_cube.gd" id="2_7053d"]
+[ext_resource type="Script" path="res://Scripts/ItemSpawner.gd" id="3_uh3gl"]
+[ext_resource type="Script" path="res://Scripts/ObjectSpawnPathFollowAnim.gd" id="4_3cvg4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5l7p"]
+atlas = ExtResource("1_81bsm")
+region = Rect2(190, 19, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l5p5"]
+atlas = ExtResource("1_81bsm")
+region = Rect2(190, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6r6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5l7p")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l5p5")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep8hu"]
+size = Vector2(19, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pd3e"]
+size = Vector2(19, 3)
+
+[sub_resource type="Curve2D" id="Curve2D_pmmb6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -0.5, 2, 0, 0, 0, 0, -0.5, -9, 0, 0, 0, 0, -0.5, -30)
+}
+point_count = 3
+
+[node name="RandomCube" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_y6r6w")
+animation = &"full"
+script = ExtResource("2_7053d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ep8hu")
+
+[node name="Buttom_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttom_detector"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_3pd3e")
+
+[node name="ItemSpawner" type="Node2D" parent="."]
+position = Vector2(0.5, -9)
+script = ExtResource("3_uh3gl")
+
+[node name="Path2D" type="Path2D" parent="ItemSpawner"]
+curve = SubResource("Curve2D_pmmb6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ItemSpawner/Path2D"]
+position = Vector2(-0.5, 2)
+rotation = -1.5708
+loop = false
+script = ExtResource("4_3cvg4")
+
+[connection signal="player_active_block" from="." to="ItemSpawner" method="summon_coin"]
+[connection signal="body_entered" from="Buttom_detector" to="." method="_on_buttom_detector_body_entered"]
+[connection signal="body_exited" from="Buttom_detector" to="." method="_on_buttom_detector_body_exited"]

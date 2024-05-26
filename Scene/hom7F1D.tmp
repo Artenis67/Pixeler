@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj2mfvkppt34n"]
+
+[ext_resource type="Script" path="res://Scripts/home_menu.gd" id="1_kokm4"]
+[ext_resource type="Texture2D" uid="uid://bhd28m41hi3py" path="res://Imports/Images/sampleb.png" id="1_xwpdb"]
+[ext_resource type="FontFile" uid="uid://dutxdr3bhf5fn" path="res://Imports/Fonts/upheavtt.ttf" id="2_x5sgj"]
+
+[node name="HomeMenu" type="Node2D"]
+position = Vector2(0, -19.935)
+scale = Vector2(1.645, 1.645)
+script = ExtResource("1_kokm4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -89.0
+offset_top = -16.0
+offset_right = 829.0
+offset_bottom = 499.0
+scale = Vector2(1.53, 1.53)
+texture = ExtResource("1_xwpdb")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 26.0
+offset_right = -28.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.662745)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 324.415
+offset_top = 75.2
+offset_right = -354.585
+offset_bottom = -441.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.662745)
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.5
+offset_top = -35.0
+offset_right = 182.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 3
+theme_override_fonts/normal_font = ExtResource("2_x5sgj")
+theme_override_font_sizes/normal_font_size = 68
+text = "Pixeler V1"
+
+[node name="ColorRect3" type="ColorRect" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 324.415
+offset_top = 222.885
+offset_right = -354.585
+offset_bottom = -294.115
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 3.77)
+color = Color(0, 0, 0, 0.662745)
+metadata/_edit_group_ = true
+
+[node name="Credits" type="Button" parent="Control/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 423.0
+offset_top = 259.0
+offset_right = 497.0
+offset_bottom = 282.0
+scale = Vector2(2.94, 2.94)
+theme_override_fonts/font = ExtResource("2_x5sgj")
+text = "Credits"
+
+[node name="Play" type="Button" parent="Control/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 423.0
+offset_top = 348.475
+offset_right = 497.0
+offset_bottom = 371.475
+scale = Vector2(2.94, 2.94)
+theme_override_colors/font_color = Color(0, 0.698039, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.85098, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.698039, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.698039, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.698039, 0, 1)
+theme_override_fonts/font = ExtResource("2_x5sgj")
+text = "Play
+"
+
+[node name="Play2" type="Button" parent="Control/ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 423.0
+offset_top = 442.945
+offset_right = 497.0
+offset_bottom = 465.945
+scale = Vector2(2.94, 2.94)
+theme_override_colors/font_color = Color(0.705882, 0.12549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.960784, 0.184314, 0, 1)
+theme_override_colors/font_hover_color = Color(0.705882, 0.12549, 0, 1)
+theme_override_colors/font_focus_color = Color(0.705882, 0.12549, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.705882, 0.12549, 0, 1)
+theme_override_fonts/font = ExtResource("2_x5sgj")
+text = "Quit"
+
+[connection signal="pressed" from="Control/ColorRect/Credits" to="." method="credit_button"]

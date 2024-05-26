@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkq7hp8xvfs33"]
+
+[ext_resource type="Script" path="res://Scripts/EndFlag.gd" id="1_57r6o"]
+[ext_resource type="Texture2D" uid="uid://dtb6smbgukdup" path="res://Assets/TileMap/tiles/tile_0131.png" id="1_hbqvt"]
+[ext_resource type="Texture2D" uid="uid://qf2if2bmrbal" path="res://Assets/TileMap/tiles/tile_0111.png" id="2_fkpcl"]
+[ext_resource type="Texture2D" uid="uid://b6pgaxulwx53b" path="res://Assets/TileMap/tiles/tile_0112.png" id="3_ato5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lild"]
+size = Vector2(18, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r36ot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fkpcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ato5m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="EndFlag" type="Node2D"]
+script = ExtResource("1_57r6o")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_0lild")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hbqvt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_r36ot")
+animation = &"idle"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

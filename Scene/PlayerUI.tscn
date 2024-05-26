@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3sv614r585el"]
+
+[ext_resource type="FontFile" uid="uid://dutxdr3bhf5fn" path="res://Imports/Fonts/upheavtt.ttf" id="1_j6tgc"]
+
+[node name="PlayerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="score-label" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 74.0
+offset_top = -104.0
+offset_right = 220.155
+offset_bottom = -67.44
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_j6tgc")
+theme_override_font_sizes/normal_font_size = 29
+text = "Score : 0"
+scroll_active = false
