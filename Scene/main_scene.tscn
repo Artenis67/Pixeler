@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvkv3v28xdj13"]
+[gd_scene load_steps=13 format=3 uid="uid://bvkv3v28xdj13"]
 
 [ext_resource type="Texture2D" uid="uid://ctpc33ymysoxh" path="res://Assets/TileMap/tilemap.png" id="1_3f64q"]
 [ext_resource type="Texture2D" uid="uid://b33eg2hhehi8" path="res://Assets/TileMap/tilemap-backgrounds.png" id="2_lgqo0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://88tixg1er2v6" path="res://Scene/CoinCube.tscn" id="4_w820i"]
 [ext_resource type="PackedScene" uid="uid://k03xnxwvwduj" path="res://Scene/Objects/coin.tscn" id="5_4e25o"]
 [ext_resource type="PackedScene" uid="uid://bkq7hp8xvfs33" path="res://Scene/Objects/EndFlag.tscn" id="6_02suj"]
+[ext_resource type="PackedScene" uid="uid://bwqtiskd3dmbf" path="res://Scene/Levels/level1.tscn" id="7_axwxd"]
+[ext_resource type="PackedScene" uid="uid://dgqwg0vobjkvo" path="res://Scene/Objects/peaks.tscn" id="8_t43hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsomo"]
 texture = ExtResource("1_3f64q")
@@ -898,7 +900,11 @@ position = Vector2(332, -7)
 
 [node name="EndFlag" parent="." instance=ExtResource("6_02suj")]
 position = Vector2(520, 81)
+next_level_scene = ExtResource("7_axwxd")
 metadata/_edit_group_ = true
+
+[node name="Peaks" parent="." instance=ExtResource("8_t43hh")]
+position = Vector2(184, 81)
 
 [editable path="random_bloc_parents/RandomCube"]
 [editable path="random_bloc_parents/RandomCube2"]

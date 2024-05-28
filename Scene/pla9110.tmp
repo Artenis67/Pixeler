@@ -58,9 +58,8 @@ animation = &"run"
 [node name="score-manager" type="Node" parent="."]
 script = ExtResource("3_uwtph")
 
-[node name="life_manager" type="Node" parent="." node_paths=PackedStringArray("life_label")]
+[node name="life_manager" type="Node" parent="."]
 script = ExtResource("4_bnbyf")
-life_label = NodePath("../life-label")
 
 [node name="score-label" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -73,17 +72,4 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_gl7ih")
 theme_override_font_sizes/normal_font_size = 29
 text = "Score : 0"
-scroll_active = false
-
-[node name="life-label" type="RichTextLabel" parent="."]
-texture_filter = 1
-offset_left = 74.0
-offset_top = -91.0
-offset_right = 220.155
-offset_bottom = -54.44
-scale = Vector2(0.5, 0.5)
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_gl7ih")
-theme_override_font_sizes/normal_font_size = 29
-text = "Life : 3"
 scroll_active = false

@@ -12,6 +12,7 @@ grow_vertical = 2
 
 [node name="score-label" type="RichTextLabel" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 74.0
 offset_top = -104.0
 offset_right = 220.155

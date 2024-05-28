@@ -32,7 +32,6 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	# Animation handling.
 	if direction <= -0.1:
 		$AnimatedSprite2D.play("run", direction)
@@ -48,6 +47,16 @@ func _physics_process(delta):
 # Reset jump when landing
 func _on_FloorDetection_body_entered(body):
 	is_jumping = false
+
+func invisibility_after_take_damage():
+	var player_sprite = $AnimatedSprite2D
+	
+	for i in range(3):
+		player_sprite.modulate = Color(1, 1, 1, 0.5)
+		await get_tree().create_timer(0.5).timeout
+		player_sprite.modulate = Color(1, 1, 1, 1)
+		await get_tree().create_timer(0.5).timeout
+
 
 func level_ended():
 	print("Level finished ! Votre socre est de : ", get_node("score-manager").score)
